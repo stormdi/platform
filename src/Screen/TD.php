@@ -304,6 +304,7 @@ class TD
             'title'        => $this->title,
             'filter'       => $this->filter,
             'filterString' => get_filter_string($this->column),
+            'slug'         => $this->sluggable(),
         ]);
     }
 
@@ -324,6 +325,23 @@ class TD
             'align'  => $this->align,
             'value'  => $value,
             'render' => $this->render,
+            'slug'   => $this->sluggable(),
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function sluggable(): string
+    {
+        return Str::slug($this->name);
+    }
+
+    /**
+     * @return string
+     */
+    public function namming(): string
+    {
+        return $this->name;
     }
 }
