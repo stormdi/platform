@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 7.0.0
+
+### Added
+- Presenters for content [#965](https://github.com/orchidsoftware/platform/issues/965)
+- Rubber layout
+- Dusk testing browser
+
+### Changed
+- First look enhancement
+- Cursor loading animations
+- Indented icons are stylized
+
+### Fixed
+- Sort&Filter generator
+- Loading files for cropper and picture (only images)
+- Display of modal window title in Utm field
+- Duplication bug fixed using map search
+
 ## 6.7.3 - 2019-12-04
 
 ### Fixed
