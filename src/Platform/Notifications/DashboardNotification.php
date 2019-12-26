@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notification;
 use Orchid\Support\Color;
 
 /**
- * Class DashboardNotification
+ * Class DashboardNotification.
  *
  * @deprecated
  */
