@@ -87,6 +87,22 @@ class TD
     protected $locale = false;
 
     /**
+     * Displays whether the user can hide
+     * or show the column in the browser.
+     *
+     * @var bool
+     */
+    protected $allowUserHidden = true;
+
+    /**
+     * Should the user independently enable
+     * the display of the column.
+     *
+     * @var bool
+     */
+    protected $defaultHidden = false;
+
+    /**
      * TD constructor.
      *
      * @param string $name
@@ -305,6 +321,7 @@ class TD
             'title'        => $this->title,
             'filter'       => $this->filter,
             'filterString' => get_filter_string($this->column),
+            'slug'         => $this->sluggable(),
         ]);
     }
 
@@ -325,7 +342,60 @@ class TD
             'align'  => $this->align,
             'value'  => $value,
             'render' => $this->render,
+            'slug'   => $this->sluggable(),
         ]);
+    }
+
+    /**
+     * Builds item menu for show/hiden column.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|null
+     */
+    public function buildItemMenu()
+    {
+        if (! $this->allowUserHidden) {
+            return;
+        }
+
+        return view('platform::partials.layouts.selectedTd', [
+            'title'         => $this->title,
+            'slug'          => $this->sluggable(),
+            'defaultHidden' => var_export($this->defaultHidden, true),
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    private function sluggable(): string
+    {
+        return Str::slug($this->name);
+    }
+
+    /**
+     * Prevents the user from hiding a column in the interface.
+     *
+     * @param bool $hidden
+     *
+     * @return TD
+     */
+    public function canHide($hidden = false): self
+    {
+        $this->allowUserHidden = $hidden;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $hidden
+     *
+     * @return $this
+     */
+    public function defaultHidden($hidden = true): self
+    {
+        $this->defaultHidden = $hidden;
+
+        return $this;
     }
 
     /**
