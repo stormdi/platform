@@ -53,6 +53,7 @@ Breadcrumbs::for('platform.example.fields', function (BreadcrumbsGenerator $trai
 Breadcrumbs::for('platform.example.layouts', function (BreadcrumbsGenerator $trail) {
     $trail->parent('platform.index');
     $trail->push(__('Overview layouts'));
+    $trail->push(__('Overview layouts'));
 });
 
 // Platform -> Example Contents

@@ -258,7 +258,7 @@ class Field implements FieldContract
     /**
      * @return string
      */
-    protected function getId(): string
+    protected function getId(): ?string
     {
         $id = $this->get('id');
 

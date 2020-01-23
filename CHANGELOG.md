@@ -4,10 +4,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
 ## 7.0.0
 
 ### Added
 - Presenters for content [#965](https://github.com/orchidsoftware/platform/issues/965)
+
+## 6.8.4 - 2020-01-23
+
+### Fixed
+- Filter submit empty string [#1042](https://github.com/orchidsoftware/platform/issues/1042)
+
+## 6.8.3 - 2020-01-17
+
+### Fixed
+- Logo display on the authorization form
+- Change the placeholder for a field with a date
+
+## 6.8.2 - 2020-01-14
+
+### Fixed
+- MSSQL datetime format for last login
+
+## 6.8.1 - 2020-01-12
+
+### Changed
+- Optional parameters for width and height [#1041](https://github.com/orchidsoftware/platform/issues/1041)
+
+### Fixed
+- Brand display when spelling incorrect
+
+## 6.8.0 - 2020-01-09
+
+### Added
 - Rubber layout
 - Dusk testing browser
 - Channel to send a notification [#1038](https://github.com/orchidsoftware/platform/issues/1038)
@@ -19,6 +48,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Indented icons are stylized
 - Source is optional for form builder
 - Extend the user model that comes with the installation [#1039](https://github.com/orchidsoftware/platform/issues/1039)
+- Do not generate `id` for default buttons
 
 ### Fixed
 - Sort&Filter generator

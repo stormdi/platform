@@ -14,7 +14,6 @@ class UserEditTest extends TestBrowserCase
         $this->browse(function (Browser $browser) {
             $user = $this->createAdminUser();
             $email = $this->faker()->safeEmail;
-
             $browser
                 ->loginAs($user)
                 ->visitRoute('platform.systems.users')
@@ -37,7 +36,6 @@ class UserEditTest extends TestBrowserCase
     {
         $this->browse(function (Browser $browser) {
             $user = $this->createAdminUser();
-
             $browser
                 ->loginAs($user, 'web')
                 ->assertAuthenticatedAs($user)
@@ -51,7 +49,6 @@ class UserEditTest extends TestBrowserCase
     {
         $this->browse(function (Browser $browser) {
             $user = $this->createAdminUser();
-
             $browser->loginAs($user)
                 ->visitRoute('platform.systems.users')
                 ->press($user->email)
