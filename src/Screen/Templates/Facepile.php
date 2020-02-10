@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Orchid\Screen\Templates;
 
+use ArrayAccess;
 use Orchid\Screen\Content;
 use Orchid\Screen\Presenters\Personable;
-use ArrayAccess;
 
 class Facepile extends Content
 {
