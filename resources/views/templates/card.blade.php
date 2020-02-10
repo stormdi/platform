@@ -84,7 +84,7 @@
     });
 </script>
 
-{{--
+
 <div class="card w-full b-n border-0 padder-v">
     <div class="card-body no-padder">
         <div class="row">
@@ -146,4 +146,3 @@
 
     </div> <!-- end card-body/ profile-user-box-->
 </div>
---}}

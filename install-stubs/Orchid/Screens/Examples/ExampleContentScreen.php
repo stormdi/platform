@@ -38,10 +38,6 @@ class ExampleContentScreen extends Screen
      */
     public function query(): array
     {
-        $avatarList = User::limit(10)->get()->map(function (User $user) {
-            return $user->presenter();
-        })->toArray();
-
         return [
             'quote'      => new class implements Quotation {
                 public function date(): string
@@ -140,7 +136,7 @@ class ExampleContentScreen extends Screen
                 'Клиентов'          => '10',
                 'Сотрудников'       => '21',
             ],
-            'avatarList' => $avatarList,
+            'avatarList' => User::limit(10)->get()->map->presenter(),
         ];
     }
 

@@ -1,5 +1,6 @@
-<div class="row">
+<div class="row padder-v">
     <div class="col">
+        <p class="font-bold text-black mb-2">Общие характеристики</p>
         @foreach($list as $key => $value)
             <dl>
                 <dt>{{ $key }}</dt>

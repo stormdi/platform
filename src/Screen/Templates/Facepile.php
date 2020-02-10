@@ -6,6 +6,7 @@ namespace Orchid\Screen\Templates;
 
 use Orchid\Screen\Content;
 use Orchid\Screen\Presenters\Personable;
+use ArrayAccess;
 
 class Facepile extends Content
 {
@@ -19,7 +20,7 @@ class Facepile extends Content
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function render(array $users)
+    public function render(ArrayAccess $users)
     {
         return view($this->template, [
             'users' => $users,
