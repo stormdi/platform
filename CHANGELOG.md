@@ -4,11 +4,53 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-
 ## 7.0.0
 
 ### Added
 - Presenters for content [#965](https://github.com/orchidsoftware/platform/issues/965)
+
+
+## 6.10.1 - 2020-02-09
+
+### Fixed
+- The update check remembers the latest available version, instead of status.
+
+## 6.10.0 - 2020-02-06
+
+### Added
+- Added `TurbolinksLocation` middleware for the correct redirects [#1049](https://github.com/orchidsoftware/platform/issues/1049)
+
+### Changed
+- Return user to desired page [#1046](https://github.com/orchidsoftware/platform/issues/1046)
+- Remember user by default [#1047](https://github.com/orchidsoftware/platform/issues/1047)
+
+### Deprecated
+- Rename `AccessMiddleware` to `Access`, previous name is outdated
+
+### Fixed
+- Old field values did not trigger an event [#1050](https://github.com/orchidsoftware/platform/issues/1050)
+
+## 6.9.0 - 2020-01-28
+
+### Added
+- Method `maxFileSize` for `Cropper` and `Picture` fields
+- Method `hideEmpty` for `ItemMenu`
+
+### Fixed
+- Accurate resource address determination
+
+## 6.8.6 - 2020-01-25
+
+### Fixed
+- Picture field buttons layout [#1045](https://github.com/orchidsoftware/platform/pull/1045)
+
+## 6.8.5 - 2020-01-24
+
+### Fixed
+- Redirect when debugging screen methods
+- Colored buttons allowed in `commandBar`
+- Position "Go back" button on the page 404
+- Do not submit a form by pressing `enter`
 
 ## 6.8.4 - 2020-01-23
 

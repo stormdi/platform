@@ -113,10 +113,16 @@ class Menu
 
         return $this->findAllChildren($location)
             ->sortBy('sort')
+            ->filter(function ($value) {
+                if ($value['childs'] && $value['hideEmpty']) {
+                    return $this->showCountElement($value['slug']);
+                }
+
+                return true;
+            })
             ->map(static function ($value) use ($template) {
                 return view($template, $value)->render();
-            })
-            ->implode(' ');
+            })->implode(' ');
     }
 
     /**

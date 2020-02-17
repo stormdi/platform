@@ -71,6 +71,11 @@ class ItemMenu
     public $permission;
 
     /**
+     * @var bool
+     */
+    public $hideEmpty = false;
+
+    /**
      * @param string $permission
      *
      * @return ItemMenu
@@ -129,6 +134,20 @@ class ItemMenu
     public function canSee(bool $value): self
     {
         $this->display = $value;
+
+        return $this;
+    }
+
+    /**
+     * Hide menu item if no children are available.
+     *
+     * @param bool $value
+     *
+     * @return ItemMenu
+     */
+    public function hideEmpty(bool $value = true): self
+    {
+        $this->hideEmpty = $value;
 
         return $this;
     }
