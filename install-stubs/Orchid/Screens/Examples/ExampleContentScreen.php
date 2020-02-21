@@ -87,9 +87,8 @@ class ExampleContentScreen extends Screen
             'table'       => [
                 new Repository([
                     'compact'    => new class implements Compactable {
-
                         /**
-                         * @inheritDoc
+                         * {@inheritdoc}
                          */
                         public function id(): ?string
                         {
@@ -97,7 +96,7 @@ class ExampleContentScreen extends Screen
                         }
 
                         /**
-                         * @inheritDoc
+                         * {@inheritdoc}
                          */
                         public function image(): ?string
                         {
@@ -138,9 +137,9 @@ class ExampleContentScreen extends Screen
     /**
      * Views.
      *
-     * @return array
      * @throws \Throwable
      *
+     * @return array
      */
     public function layout(): array
     {
