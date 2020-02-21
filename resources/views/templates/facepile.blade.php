@@ -1,5 +1,5 @@
 
-<div class="avatar-group d-flex justify-content-start">
+<div class="avatar-group d-flex justify-content-start py-3">
     @foreach($users as $user)
         <a href="{{ $user->url() }}" class="avatar thumb-xs"
            data-controller="layouts--tooltip"

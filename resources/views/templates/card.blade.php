@@ -46,7 +46,6 @@
                 </div>
             </div>
 
-
         </div>
     </div>
 </div>
@@ -83,66 +82,3 @@
         $('.avatar.thumb-xs').tooltip('toggleEnabled');
     });
 </script>
-
-
-<div class="card w-full b-n border-0 padder-v">
-    <div class="card-body no-padder">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="d-flex align-items-center">
-                    <span class="float-left mr-4"><img
-                            src="https://www.gravatar.com/avatar/16a0f7555b060a960db3506028e6df3d" alt=""
-                            class="rounded-circle img-thumbnail"></span>
-                    <div>
-
-                        <h3 class="mt-1 font-thin mb-2 text-black">Michael Franklin
-                            <small class="text-muted">(Authorised Brand Seller)</small>
-                        </h3>
-
-                        <div class="my-3">
-                            <span class="mr-2">
-                                <strong class="text-black">561</strong>
-                                <span class="text-muted">Posts</span>
-                            </span>
-                            <span class="mr-2">
-                                <strong class="text-black">4,000</strong>
-                                <span class="text-muted">Followers</span>
-                            </span>
-                            <span class="mr-2">
-                                <strong class="text-black">500</strong>
-                                <span class="text-muted">Following</span>
-                            </span>
-                        </div>
-
-                        <ul class="mb-0 list-inline b-t pt-2 d-none">
-
-                            <li class="list-inline-item pr-4 b-r">
-                                <h5 class="mb-0 text-black font-thin">$ 25,184</h5>
-                                <small class="text-muted block mb-1">Sales Today</small>
-                            </li>
-                            <li class="list-inline-item pr-4 b-r">
-                                <h5 class="mb-0 text-black font-thin">$ 25,184</h5>
-                                <small class="text-muted block mb-1">Sales Today</small>
-                            </li>
-                            <li class="list-inline-item pr-4 b-r">
-                                <h5 class="mb-0 text-black font-thin">$ 25,184</h5>
-                                <small class="text-muted block mb-1">Sales Today</small>
-                            </li>
-                            <li class="list-inline-item pr-4 b-r">
-                                <h5 class="mb-0 text-black font-thin">$ 25,184</h5>
-                                <small class="text-muted block mb-1">Sales Today</small>
-                            </li>
-                            <li class="list-inline-item">
-                                <h5 class="mb-0 text-black font-thin">5482</h5>
-                                <small class="text-muted block mb-1">Sales Today</small>
-                            </li>
-                        </ul>
-                    </div> <!-- end media-body-->
-                </div>
-            </div> <!-- end col-->
-
-            <!-- end col-->
-        </div> <!-- end row -->
-
-    </div> <!-- end card-body/ profile-user-box-->
-</div>
