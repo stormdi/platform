@@ -11,6 +11,7 @@ use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
+use Orchid\Screen\Templates\Persona;
 
 class UserListLayout extends Table
 {
@@ -61,12 +62,12 @@ class UserListLayout extends Table
                                 ->icon('icon-pencil'),
 
                             Button::make(__('Delete'))
+                                ->icon('icon-trash')
                                 ->method('remove')
                                 ->confirm(__('Are you sure you want to delete the user?'))
                                 ->parameters([
                                     'id' => $user->id,
-                                ])
-                                ->icon('icon-trash'),
+                                ]),
                         ]);
                 }),
         ];

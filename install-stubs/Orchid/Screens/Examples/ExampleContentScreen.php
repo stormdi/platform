@@ -1,19 +1,20 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Orchid\Screens\Examples;
 
 use App\User;
+use Faker\Factory;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Layout;
 use Orchid\Screen\Presenters\Cardable;
-use Orchid\Screen\Presenters\Quotation;
+use Orchid\Screen\Presenters\Compactable;
+use Orchid\Screen\Repository;
 use Orchid\Screen\Screen;
+use Orchid\Screen\TD;
+use Orchid\Screen\Templates\Compact;
 use Orchid\Screen\Templates\Compendium;
 use Orchid\Screen\Templates\Facepile;
-use Orchid\Screen\Templates\Quote;
 
 class ExampleContentScreen extends Screen
 {
@@ -22,7 +23,7 @@ class ExampleContentScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Content templates';
+    public $name = 'Stencils for 7.0';
 
     /**
      * Display header description.
@@ -39,53 +40,7 @@ class ExampleContentScreen extends Screen
     public function query(): array
     {
         return [
-            'quote'      => new class implements Quotation {
-                public function date(): string
-                {
-                    return '6 дней назад';
-                }
-
-                public function message(): string
-                {
-                    return 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
-                  little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This
-                  content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.';
-                }
-
-                /**
-                 * @return string
-                 */
-                public function subTitle(): string
-                {
-                    return 'Owner';
-                }
-
-                /**
-                 * @return string
-                 */
-                public function url(): string
-                {
-                    return '#';
-                }
-
-                /**
-                 * @return string
-                 */
-                public function title(): string
-                {
-                    return 'Kristina Claire';
-                }
-
-                /**
-                 * @return string
-                 */
-                public function image(): ?string
-                {
-                    return 'https://pipeline.mediumra.re/assets/img/avatar-female-4.jpg';
-                }
-            },
-            'card' => new class implements Cardable {
+            'card'        => new class implements Cardable {
                 /**
                  * @return string
                  */
@@ -129,14 +84,43 @@ class ExampleContentScreen extends Screen
                     return [];
                 }
             },
-            'compendium' => [
+            'table'       => [
+                new Repository([
+                    'compact'    => new class implements Compactable {
+                        /**
+                         * {@inheritdoc}
+                         */
+                        public function id(): ?string
+                        {
+                            return (string) random_int(143543, 343543);
+                        }
+
+                        /**
+                         * {@inheritdoc}
+                         */
+                        public function image(): ?string
+                        {
+                            return 'https://picsum.photos/600/300?test=rege';
+                        }
+                    },
+                    'text'       => Factory::create()->text(),
+                    'avatarList' => User::limit(10)->get()->map->presenter(),
+                ]),
+            ],
+            'compendium'  => [
                 'В прошлом месяце'  => '30 0000 руб',
                 'Проектов в работе' => 14,
                 'Просрочек'         => '1',
                 'Клиентов'          => '10',
                 'Сотрудников'       => '21',
             ],
-            'avatarList' => User::limit(10)->get()->map->presenter(),
+            'compendium2' => [
+                'Type'                               => 'electric stove',
+                'Model'                              => 'dream 251CH',
+                'Main color'                         => 'white',
+                'Complementary color'                => 'none',
+                'Color declared by the manufacturer' => 'white',
+            ],
         ];
     }
 
@@ -160,6 +144,8 @@ class ExampleContentScreen extends Screen
     public function layout(): array
     {
         return [
+            Layout::view('h1', ['text' => 'Card']),
+
             new \Orchid\Screen\Templates\Card('card', [
                 Button::make('Example Button')
                     ->method('example')
@@ -169,12 +155,28 @@ class ExampleContentScreen extends Screen
                     ->icon('icon-bag'),
             ]),
 
-            new Facepile('avatarList'),
+            Layout::view('h1', ['text' => 'Compact & Facepile']),
 
-            Layout::columns([
-                new Compendium('compendium'),
-                new Quote('quote'),
+            Layout::table('table', [
+
+                TD::set('compact')
+                    ->width('150px')
+                    ->render(function ($repository) {
+                        return new Compact($repository->get('compact'));
+                    }),
+
+                TD::set('text'),
+
+                TD::set('Facepile')
+                    ->render(function ($repository) {
+                        return new Facepile($repository->get('avatarList'));
+                    }),
+
             ]),
+
+            Layout::view('h1', ['text' => 'Compendium']),
+
+            new Compendium('compendium2'),
         ];
     }
 }

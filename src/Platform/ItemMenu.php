@@ -7,6 +7,7 @@ namespace Orchid\Platform;
 use Closure;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use Orchid\Support\Color;
 
 class ItemMenu
 {
@@ -245,15 +246,15 @@ class ItemMenu
     }
 
     /**
-     * @param Closure $badge
-     * @param string  $class
+     * @param Closure    $badge
+     * @param Color|null $color
      *
      * @return ItemMenu
      */
-    public function badge(Closure $badge, string $class = 'bg-primary'): self
+    public function badge(Closure $badge, Color $color = null): self
     {
         $this->badge = [
-            'class' => $class,
+            'class' => $color ?? Color::PRIMARY(),
             'data'  => $badge,
         ];
 

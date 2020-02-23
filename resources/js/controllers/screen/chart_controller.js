@@ -20,6 +20,7 @@ export default class extends Controller {
         });
 
         $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', this.drawEvent());
+        window.addEventListener("resize", this.drawEvent());
     }
 
     /**
@@ -43,6 +44,7 @@ export default class extends Controller {
      *
      */
     disconnect() {
+        window.removeEventListener("resize", this.drawEvent());
         $(document).off('shown.bs.tab', 'a[data-toggle="tab"]', this.drawEvent());
     }
 }
