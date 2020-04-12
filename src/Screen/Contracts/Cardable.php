@@ -27,5 +27,4 @@ interface Cardable
      * @return mixed
      */
     public function status(): ?Color;
-
 }
