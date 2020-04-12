@@ -126,9 +126,9 @@ class User extends Authenticatable implements UserInterface
     }
 
     /**
-     * @return UserPresenter
+     * @return
      */
-    public function presenter(): UserPresenter
+    public function presenter()
     {
         return new UserPresenter($this);
     }

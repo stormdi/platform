@@ -5,7 +5,7 @@
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
-                <i class="icon-filter"></i>
+                {!! \Orchid\Support\Facades\Dashboard::icon('filter') !!}
                 {{__('Filters')}}
             </button>
 

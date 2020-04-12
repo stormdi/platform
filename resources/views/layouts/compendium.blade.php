@@ -1,4 +1,4 @@
-<div class="row padder-v">
+<div class="row py-3">
     <div class="col">
         <p class="font-bold text-black mb-2">General</p>
         @foreach($list as $key => $value)

@@ -16,7 +16,7 @@
                     <button type="submit"
                             form="filters"
                             class="btn btn-default">
-                        <i class="icon-filter"></i>
+                        {!! \Orchid\Support\Facades\Dashboard::icon('filter') !!}
                     </button>
                 </div>
             </div>

@@ -1,21 +1,21 @@
 @component($typeForm, get_defined_vars())
     <div
-            data-controller="fields--upload"
-            data-fields--upload-storage="{{$storage ?? 'public'}}"
-            data-fields--upload-name="{{$name}}"
-            data-fields--upload-id="dropzone-{{$id}}"
-            data-fields--upload-data='@json($value)'
-            data-fields--upload-groups="{{$attributes['groups'] ?? ''}}"
-            data-fields--upload-multiple="{{$attributes['multiple']}}"
-            data-fields--upload-parallel-uploads="{{$parallelUploads }}"
-            data-fields--upload-max-file-size="{{$maxFileSize }}"
-            data-fields--upload-max-files="{{$maxFiles}}"
-            data-fields--upload-accepted-files="{{$acceptedFiles }}"
-            data-fields--upload-resize-quality="{{$resizeQuality }}"
-            data-fields--upload-resize-width="{{$resizeWidth }}"
-            data-fields--upload-is-media-library="{{ $media }}"
-            data-fields--upload-close-on-add="{{ $closeOnAdd }}"
-            data-fields--upload-resize-height="{{$resizeHeight }}"
+        data-controller="fields--upload"
+        data-fields--upload-storage="{{$storage ?? 'public'}}"
+        data-fields--upload-name="{{$name}}"
+        data-fields--upload-id="dropzone-{{$id}}"
+        data-fields--upload-data='@json($value)'
+        data-fields--upload-groups="{{$attributes['groups'] ?? ''}}"
+        data-fields--upload-multiple="{{$attributes['multiple']}}"
+        data-fields--upload-parallel-uploads="{{$parallelUploads }}"
+        data-fields--upload-max-file-size="{{$maxFileSize }}"
+        data-fields--upload-max-files="{{$maxFiles}}"
+        data-fields--upload-accepted-files="{{$acceptedFiles }}"
+        data-fields--upload-resize-quality="{{$resizeQuality }}"
+        data-fields--upload-resize-width="{{$resizeWidth }}"
+        data-fields--upload-is-media-library="{{ $media }}"
+        data-fields--upload-close-on-add="{{ $closeOnAdd }}"
+        data-fields--upload-resize-height="{{$resizeHeight }}"
     >
         <div id="dropzone-{{$id}}" class="dropzone-wrapper">
             <div class="fallback">
@@ -23,10 +23,12 @@
             </div>
             <div class="visual-dropzone sortable-dropzone dropzone-previews">
                 <div class="dz-message dz-preview dz-processing dz-image-preview">
-                    <div class="bg-light d-flex justify-content-center align-items-center b r-2x"
+                    <div class="bg-light d-flex justify-content-center align-items-center border"
                          style="min-height: 112px;">
-                        <div class="pr-1 pl-1 pt-3 pb-3">
-                            <span class="text-2x icon-cloud-upload"></span>
+                        <div class="pr-1 pl-1 py-3">
+                            <span class="text-2x">
+                                {!! \Orchid\Support\Facades\Dashboard::icon('cloud-upload') !!}
+                            </span>
                             <small class="text-muted w-b-k text-xs block">{{__('Upload file')}}</small>
                         </div>
                     </div>
@@ -35,9 +37,9 @@
                 @if($media)
                     <div class="dz-message dz-preview dz-processing dz-image-preview"
                          data-action="click->fields--upload#openMedia">
-                        <div class="bg-light d-flex justify-content-center align-items-center b r-2x"
+                        <div class="bg-light d-flex justify-content-center align-items-center border"
                              style="min-height: 112px;">
-                            <div class="pr-1 pl-1 pt-3 pb-3">
+                            <div class="pr-1 pl-1 py-3">
                                 <span class="text-2x icon-open"></span>
                                 <small class="text-muted w-b-k text-xs block">{{__('Media catalog')}}</small>
                             </div>

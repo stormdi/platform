@@ -9,7 +9,7 @@ use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 // Platform > System > Users
 Breadcrumbs::for('platform.systems.users', function (BreadcrumbsGenerator $trail) {
-    $trail->parent('platform.systems.index');
+    $trail->parent('platform.index');
     $trail->push(__('Users'), route('platform.systems.users'));
 });
 
@@ -21,7 +21,7 @@ Breadcrumbs::for('platform.systems.users.edit', function (BreadcrumbsGenerator $
 
 // Platform > System > Roles
 Breadcrumbs::for('platform.systems.roles', function (BreadcrumbsGenerator $trail) {
-    $trail->parent('platform.systems.index');
+    $trail->parent('platform.index');
     $trail->push(__('Roles'), route('platform.systems.roles'));
 });
 

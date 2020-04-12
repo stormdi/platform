@@ -32,7 +32,7 @@ use Orchid\Screen\Field;
  * @method Input required(bool $value = true)
  * @method Input size($value = true)
  * @method Input src($value = true)
- * @method Input step($value = true)
+ * @method Input step(int $value)
  * @method Input tabindex($value = true)
  * @method Input type($value = true)
  * @method Input value($value = true)

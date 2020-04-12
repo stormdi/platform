@@ -2,24 +2,29 @@
 
 @section('body-left')
 
-    <div class="d-sm-flex d-md-block wrapper mt-md-4 w-full v-center">
+    {{--
+        <div class="row d-sm-flex d-md-block p-3 mt-md-4 w-100 v-center">
         <a href="#" class="header-toggler d-md-none mr-auto order-first"
            data-toggle="collapse"
            data-target="#headerMenuCollapse">
-            <span class="header-toggler-icon icon-menu"></span>
+            {!! \Orchid\Support\Facades\Dashboard::icon('menu',[
+                'class' => 'header-toggler-icon',
+            ]) !!}
             <span class="ml-2">@yield('title')</span>
         </a>
-
         <a class="header-brand order-last" href="{{route('platform.index')}}">
             @includeFirst([config('platform.template.header'), 'platform::header'])
         </a>
     </div>
+    --}}
 
-    <nav class="collapse d-md-block w-full" id="headerMenuCollapse">
+    <nav class="collapse d-md-block w-100" id="headerMenuCollapse">
 
+        {{--
         @include('platform::partials.search')
 
         @includeWhen(Auth::check(), 'platform::partials.profile')
+        --}}
 
         <ul class="nav flex-column m-b">
             {!! Dashboard::menu()->render('Main') !!}
@@ -27,7 +32,7 @@
 
     </nav>
 
-    <div class="h-100 w-100 position-relative to-top cursor b-b mt-md-5"
+    <div class="h-100 w-100 position-relative to-top cursor border-bottom mt-md-5"
          data-action="click->layouts--html-load#goToTop"
          title="{{ __('Go to top') }}"
          style="border-bottom: 1px solid rgba(233, 236, 239, 0.05);">
@@ -36,19 +41,19 @@
         </div>
     </div>
 
-    <div class="wrapper m-b m-t d-none d-lg-block w-full">
+    <div class="p-4 m-b m-t d-none d-lg-block w-100">
         @includeFirst([config('platform.template.footer'), 'platform::footer'])
     </div>
 @endsection
 
 @section('body-right')
-    <div class="wrapper mt-md-4 @hasSection('navbar') @else d-none d-md-block @endif">
+    <div class="p-3 mt-md-4 @hasSection('navbar') @else d-none d-md-block @endif">
         <div class="v-md-center">
-            <div class="d-none d-md-block col-xs-12 col-md-4 no-padder">
+            <div class="d-none d-md-block col-xs-12 col-md no-padder">
                 <h1 class="m-n font-thin h3 text-black">@yield('title')</h1>
-                <small class="text-muted text-ellipsis" title="@yield('description')">@yield('description')</small>
+                <small class="text-muted" title="@yield('description')">@yield('description')</small>
             </div>
-            <div class="col-xs-12 col-md-8 no-padder">
+            <div class="col-xs-12 col-md-auto ml-auto no-padder">
                 <ul class="nav command-bar justify-content-sm-end justify-content-start v-center">
                     @yield('navbar')
                 </ul>

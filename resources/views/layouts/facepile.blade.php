@@ -7,7 +7,7 @@
            data-placement="top"
            title="{{ $user->title() }}">
             <img src="{{ $user->image() }}"
-                 class="avatar-img rounded-circle b bg-light"
+                 class="avatar-img rounded-circle border bg-light"
                  alt="{{ $user->title() }}">
         </a>
     @endforeach

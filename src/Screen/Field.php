@@ -420,18 +420,6 @@ class Field implements Fieldable
     }
 
     /**
-     * Create separate line after the field.
-     *
-     * @return static
-     */
-    public function hr(): self
-    {
-        $this->set('hr');
-
-        return $this;
-    }
-
-    /**
      * @param Closure $closure
      *
      * @return static

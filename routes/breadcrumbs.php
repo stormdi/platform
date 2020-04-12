@@ -10,12 +10,6 @@ Breadcrumbs::for('platform.index', function (BreadcrumbsGenerator $trail) {
     $trail->push(__('Main'), route('platform.index'));
 });
 
-// Platform > System
-Breadcrumbs::for('platform.systems.index', function (BreadcrumbsGenerator $trail) {
-    $trail->parent('platform.index');
-    $trail->push(__('Systems'), route('platform.systems.index'));
-});
-
 // Platform -> Notifications
 Breadcrumbs::for('platform.notifications', function (BreadcrumbsGenerator $trail) {
     $trail->parent('platform.index');

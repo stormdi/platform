@@ -29,3 +29,10 @@
 @import "plugins/dropzone";
 @import "plugins/load-opacity";
 @import "plugins/accardion";
+
+
+@media (min-width: 1200px) {
+    .container, .container-sm, .container-md, .container-lg, .container-xl {
+        max-width: 1440px;
+    }
+}

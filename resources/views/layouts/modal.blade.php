@@ -22,8 +22,10 @@
                 >
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="icon-cross icons"></i></button>
-                        <h4 class="modal-title m-b text-black font-thin" data-target="screen--modal.title">{{$title}}</h4>
+                            {!! \Orchid\Support\Facades\Dashboard::icon('cross') !!}
+                        </button>
+                        <h4 class="modal-title m-b text-black font-thin"
+                            data-target="screen--modal.title">{{$title}}</h4>
                     </div>
                     <div class="modal-body">
                         <div data-async>

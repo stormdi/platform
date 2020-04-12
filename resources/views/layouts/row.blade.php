@@ -1,3 +1,6 @@
-<div data-async>
+<fieldset data-async>
+    <legend>Базовые параметры</legend>
+
     {!! $form ?? '' !!}
-</div>
+</fieldset>
+

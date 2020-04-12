@@ -19,32 +19,47 @@
     min-width: 10em;
     max-width: 450px;
 }
+
+
 .select2-container--bootstrap {
 
-  .select2-selection {
-    @include box-shadow(none);
-    border : 1px solid $form-control-border-color;
-  }
+    .select2-selection--single {
+        height: $form-height;
+        padding: 0.275rem 1rem 0.375rem 0.75rem;
+    }
 
-  .select2-dropdown {
-    border-color : fade-out($brand-black, 0.9);
-    outline      : 0 !important;
-    @include box-shadow(none);
-    @include placeholder($text-muted);
-  }
+    .select2-selection--single .select2-selection__rendered {
+        color: $brand-black;
+    }
 
-  &.select2-container--focus .select2-selection, &.select2-container--open .select2-selection {
-    border-color     : fade-out($brand-black, 0.9);
-    background-color : $brand-grey-light;
-    outline          : 0 !important;
-    @include box-shadow(none);
-    @include placeholder($text-muted);
-  }
+    .select2-selection {
+        @include box-shadow(none);
+        border: 1px solid $form-control-border-color;
+    }
 
-  .select2-results__option--highlighted[aria-selected]{
-    background-color : $brand-grey-light;
-    color: inherit;
-  }
+    .select2-dropdown {
+        border-color: fade-out($brand-black, 0.9);
+        outline: 0 !important;
+        @include box-shadow(none);
+        @include placeholder($text-muted);
+    }
+
+    &.select2-container--focus .select2-selection, &.select2-container--open .select2-selection {
+        border-color: fade-out($brand-black, 0.9);
+        background-color: $brand-grey-light;
+        outline: 0 !important;
+        @include box-shadow(none);
+        @include placeholder($text-muted);
+    }
+
+    .select2-results__option--highlighted[aria-selected] {
+        background-color: $brand-grey-light;
+        color: inherit;
+    }
+
+    .select2-selection__clear {
+        margin-top: -1px;
+    }
 
 }
 
@@ -104,11 +119,11 @@ div.mce-fullscreen {
 
 }
 
-.editor-preview-side{
-  border-left: none!important;
-  @extend .b-t;
-  @extend .bg-white;
-  @extend .wrapper;
+.editor-preview-side {
+    border-left: none !important;
+    @extend .border-top;
+    @extend .bg-white;
+    @extend .wrapper;
 }
 
 .editor-toolbar.fullscreen{

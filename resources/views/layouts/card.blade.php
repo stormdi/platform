@@ -1,4 +1,4 @@
-<div class="padder-v d-block">
+<div class="py-3 d-block">
     <div class="card">
         <div class="row no-gutters">
 
@@ -15,7 +15,7 @@
             @endempty
 
             <div class="col">
-                <div class="card-body h-full d-table">
+                <div class="card-body h-100 d-table">
 
                     <div class="row d-flex align-items-center mb-1">
                         <div class="col-auto">
@@ -42,7 +42,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="card-text">{!! $descriptions  !!}</div>
+                    <div class="card-text">{!! $description  !!}</div>
                 </div>
             </div>
 

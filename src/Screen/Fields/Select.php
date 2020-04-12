@@ -137,8 +137,8 @@ class Select extends Field
     }
 
     /**
-     * @param string $name
-     * @param string $key
+     * @param string      $name
+     * @param string|null $key
      *
      * @return self
      */

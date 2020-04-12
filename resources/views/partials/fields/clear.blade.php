@@ -9,6 +9,3 @@
         <small class="form-text text-muted">{!!$help!!}</small>
     @endif
 </div>
-@isset($hr)
-    <div class="line line-dashed b-b line-lg"></div>
-@endisset

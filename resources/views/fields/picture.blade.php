@@ -6,7 +6,7 @@
          data-fields--picture-url="{{ $url }}"
          data-fields--picture-max-file-size="{{ $maxFileSize }}"
     >
-        <div class="b text-right wrapper picture-actions">
+        <div class="border text-right p-3 picture-actions dashed">
 
             <div class="fields-picture-container">
                 <img src="#" class="picture-preview img-fluid img-full m-b-md b" alt="">
@@ -16,7 +16,8 @@
 
             <div class="btn-group">
                 <label class="btn btn-default m-n">
-                    <i class="icon-cloud-upload mr-2"></i> {{ __('Browse') }}
+                    {!! \Orchid\Support\Facades\Dashboard::icon('cloud-upload') !!}
+                    {{ __('Browse') }}
                     <input type="file"
                            accept="image/*"
                            data-target="fields--picture.upload"

@@ -8,7 +8,7 @@
          data-fields--cropper-url="{{ $url }}"
          data-fields--cropper-max-file-size="{{ $maxFileSize }}"
     >
-        <div class="b text-right wrapper cropper-actions">
+        <div class="border text-right p-3 cropper-actions dashed">
 
             <div class="fields-cropper-container">
                 <img src="#" class="cropper-preview img-fluid img-full m-b-md b" alt="">
@@ -18,7 +18,8 @@
 
             <div class="btn-group">
                 <label class="btn btn-default m-n">
-                    <i class="icon-cloud-upload mr-2"></i> {{ __('Browse') }}
+                    {!! \Orchid\Support\Facades\Dashboard::icon('cloud-upload') !!}
+                    {{ __('Browse') }}
                     <input type="file"
                            accept="image/*"
                            data-target="fields--cropper.upload"

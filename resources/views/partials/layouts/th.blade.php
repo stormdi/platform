@@ -6,7 +6,7 @@
                 {{$title}}
 
                 @if(is_sort($column))
-                    <i class="icon-sort-amount-{{get_sort($column)}}"></i>
+                    {!! \Orchid\Support\Facades\Dashboard::icon('sort-amount-' . get_sort($column)) !!}
                 @endif
             </a>
         @else
