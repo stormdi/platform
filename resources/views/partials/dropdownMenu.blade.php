@@ -1,7 +1,7 @@
 @isset($title)
-    <div class="hidden-folded padder m-t-xs m-b-xs text-muted text-xs m-l">{{ __($title) }}</div>
+    <div class="hidden-folded padder m-t-xs m-b-xs text-muted text-xs">{{ __($title) }}</div>
 @endisset
-<a href="{{$route ?? '#'}}" class="dropdown-item">
+<a href="{{$route ?? '#'}}" class="dropdown-item ">
 
     <span class="col-auto mr-auto no-padder">
         <i class="{{$icon}} mr-2"></i>

@@ -33,26 +33,69 @@
     @endforeach
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
 
-<div class="app row m-n" id="app" data-controller="@yield('controller')" @yield('controller-data')>
-    <div class="container-lg">
-        <div class="row">
-            <div class="aside col-xs-12 col-md-2 offset-xxl-0 col-xl-2 col-xxl-3 no-padder bg-dark">
-                <div class="d-md-flex align-items-start flex-column d-sm-block h-full">
-                    @yield('body-left')
+<div class="app flex-shrink-0" id="app" data-controller="@yield('controller')" @yield('controller-data')>
+
+    <div class="bg-white">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center p-3 pt-4" style="background: #fff; box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);">
+
+                <div class="d-sm-flex d-md-block my-0 v-center mr-md-auto">
+                    <a href="#" class="header-toggler d-md-none mr-auto order-first"
+                       data-toggle="collapse"
+                       data-target="#headerMenuCollapse">
+                        <span class="header-toggler-icon icon-menu"></span>
+                        <span class="ml-2">@yield('title')</span>
+                    </a>
+
+                    <a class="header-brand order-last" href="{{route('platform.index')}}">
+                        @includeFirst([config('platform.template.header'), 'platform::header'])
+                    </a>
                 </div>
-            </div>
-            <div class="col-md col-xl col-xxl-9 bg-white shadow no-padder min-vh-100 overflow-hidden">
-                @yield('body-right')
+
+                <nav class="my-2 my-md-0 mr-md-3 list-inline">
+                    {!! Dashboard::menu()->render('Main') !!}
+                </nav>
+
+                @include('platform::partials.search')
+
+                @includeWhen(Auth::check(), 'platform::partials.profile')
             </div>
         </div>
     </div>
 
+    <div class="" style="background-color: #3d4146!important;color: #fff;">
+        <div class="container">
+            <div class="p-3 @hasSection('navbar') @else d-none d-md-block @endif" style="box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);">
+                <div class="v-md-center">
+                    <div class="d-none d-md-block col-xs-12 col-md no-padder">
+                        <h1 class="m-n font-thin h3 text-white">@yield('title')</h1>
+                        <small class="text-muted" title="@yield('description')">@yield('description')</small>
+                    </div>
+                    <div class="col-xs-12 col-md-auto ml-auto no-padder">
+                        <ul class="nav command-bar justify-content-sm-end justify-content-start v-center">
+                            @yield('navbar')
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-lg">
+        @yield('body-right')
+    </div>
 
 @include('platform::partials.toast')
 </div>
+
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        @includeFirst([config('platform.template.footer'), 'platform::footer'])
+    </div>
+</footer>
 
 @stack('scripts')
 

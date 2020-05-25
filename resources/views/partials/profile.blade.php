@@ -1,9 +1,24 @@
-<div class="p-3 v-center">
+<div class="v-center">
+    <div class="pull-right text-center pr-3 pl-3" data-turbolinks-permanent>
+        <a href="{{ route('platform.notifications') }}"
+           class="nav-link icon no-padder"
+           data-controller="layouts--notification"
+           data-layouts--notification-count="{{ count($notifications) }}"
+           data-layouts--notification-url="{{ route('platform.api.notifications') }}"
+           data-layouts--notification-method="post"
+           data-layouts--notification-interval="60000"
+        >
+            <i class="icon-bell"></i>
+
+            <span class="badge badge-sm up bg-danger text-white" data-target="layouts--notification.badge"></span>
+        </a>
+    </div>
+
     <div class="dropdown col no-padder">
         <a href="#" class="nav-link p-0 v-center" data-toggle="dropdown">
             @if($image = Auth::user()->presenter()->image())
                 <span class="thumb-sm avatar mr-3">
-                        <img src="{{$image}}" class="b b-dark bg-light">
+                        <img src="{{$image}}" class="b bg-light">
                 </span>
             @endif
             <span style="width:11em;font-size: 0.85em;">
@@ -67,6 +82,4 @@
 
         </div>
     </div>
-
-    @include('platform::partials.notificationProfile')
 </div>
