@@ -17,6 +17,8 @@ use Orchid\Platform\Http\Screens\SearchScreen;
 
 // Index and default...
 $this->router->get('/', [IndexController::class, 'index'])->name('index');
+$this->router->post('/async/{screen}/{method?}/{argument?}', [\Orchid\Platform\Http\Controllers\Systems\AsyncController::class, 'load'])->name('async');
+
 $this->router->fallback([IndexController::class, 'fallback']);
 
 $this->router->screen('search/{query}', SearchScreen::class)->name('search');

@@ -8,6 +8,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
+use Orchid\Screen\Screen;
 
 class Dashboard
 {
@@ -53,6 +54,23 @@ class Dashboard
      * @var Collection
      */
     private $publicDirectories;
+
+    /**
+     * @var Screen
+     */
+    private $curentScreen;
+
+    public function setCurentScreen($screen)
+    {
+        $this->curentScreen = $screen;
+
+        return $this;
+    }
+
+    public function getCurentScreen()
+    {
+        return $this->curentScreen;
+    }
 
     /**
      * Dashboard constructor.

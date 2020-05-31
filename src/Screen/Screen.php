@@ -166,6 +166,7 @@ abstract class Screen extends Controller
      */
     public function handle(...$parameters)
     {
+        \Orchid\Support\Facades\Dashboard::setCurentScreen(get_class($this));
         abort_if(! $this->checkAccess(), 403);
 
         if ($this->request->method() === 'GET' || (! count($parameters))) {
